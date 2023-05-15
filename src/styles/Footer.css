@@ -7,4 +7,7 @@
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    font-size: min(3.5vw, 15px)
 }

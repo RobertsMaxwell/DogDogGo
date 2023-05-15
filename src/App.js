@@ -6,13 +6,13 @@ import {Routes, Route} from "react-router-dom"
 
 function App() {
   return (
-    <>
+    <div className="app">
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/search/:query" element={<Serp />} />
       </Routes>
-      {/* <Footer /> */}
-    </>
+      <Footer />
+    </div>
   );
 }
 
