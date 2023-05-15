@@ -26,7 +26,7 @@ export default function Landing () {
                 <img src={search} alt="Search" />
             </div>
             <div className="misc">
-                The worlds first search engine for dogs.
+                The worlds first <i>private</i> search engine for dogs.
             </div>
         </div>
     )
