@@ -3,6 +3,7 @@
     flex-direction: column;
     padding: 30px;
     border-radius: 20px;
+    word-wrap: break-word;
 }
 
 .result:hover {
@@ -16,9 +17,4 @@
 .result .url {
     margin-bottom: 10px;
     color: grey;
-    word-wrap: break-word;
 }
-
-/* .result:hover {
-    background-color: rgb(245, 245, 245)
-} */
