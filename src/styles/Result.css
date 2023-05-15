@@ -1,0 +1,24 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.result:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.result .title {
+    font-size: 25px;
+}
+
+.result .url {
+    margin-bottom: 10px;
+    color: grey;
+    word-wrap: break-word;
+}
+
+/* .result:hover {
+    background-color: rgb(245, 245, 245)
+} */

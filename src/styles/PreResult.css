@@ -1,0 +1,29 @@
+.preresult {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 30px;
+}
+
+.preresult:last-child {
+    border: none;
+}
+
+.preresult > div {
+    background-color: rgb(201, 201, 201);
+}
+
+.preresult .title {
+    width: 600px;
+    height: 30px;
+}
+
+.preresult .url {
+    width: 200px;
+    height: 15px;
+}
+
+.preresult .desc {
+    width: 500px;
+    height: 80px;
+}

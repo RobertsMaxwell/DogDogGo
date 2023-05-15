@@ -1,0 +1,170 @@
+.SERP {
+    display: flex;
+    flex-direction: column;
+}
+
+.SERP .header {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.SERP .header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+@media only screen and (max-width: 700px) {
+    .SERP .header {
+        padding-left: 20px;
+    }
+
+    .SERP .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.SERP .header .logo {
+    font-family: "Logo";
+    font-size: 28px;
+}
+
+.SERP .header .logo:hover {
+    cursor: pointer;
+}
+
+.SERP .header .search_bar {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    max-width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.SERP .header .search_bar input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.SERP .header .search_bar img {
+    height: 20px;
+    margin-right: 20px;
+    margin-left: 15px;
+}
+
+.SERP .header .language {
+    display: flex;
+    align-self: flex-end;
+    font-size: 20px;
+    position: relative;
+}
+
+.SERP .header .language .selected {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    padding-left: 10px;
+    gap: 15px;
+    border-radius: 10px;
+}
+
+.SERP .header .language .selected:hover {
+    background-color: rgb(243, 243, 243);
+    cursor: pointer;
+}
+
+.SERP .header .language .selected img {
+    height: 20px;
+}
+
+.SERP .header .language .lang_drop {
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: white;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    overflow: hidden;
+    font-size: 20px;
+    right: 0;
+    z-index: 99;
+}
+
+.SERP .header .language .lang_drop > div {
+    padding: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.SERP .header .language .lang_drop > div:hover {
+    background-color: rgb(243, 243, 243);
+    cursor: pointer;
+}
+
+.SERP .results {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    max-width: 90%;
+    padding-left: min(3vw, 140px);
+}
+
+.SERP .results .info {
+    padding-top: 20px;
+    font-size: 18px;
+    opacity: .9;
+    margin-bottom: 5px;
+}
+
+.SERP .results .preStats {
+    margin-top: 20px;
+    width: 400px;
+    height: 25px;
+    background-color: rgb(201, 201, 201);
+}
+
+.SERP .results .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+}
+
+.SERP .results .more button {
+    height: 50px;
+    width: 500px;
+    background-color: rgb(236, 236, 236);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "Logo";
+}
+
+.SERP .results .more button:hover {
+    cursor: pointer;
+    filter: brightness(.97);
+}
