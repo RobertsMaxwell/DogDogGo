@@ -30,7 +30,7 @@ export default function Landing () {
                 }}/>
             </div>
             <div className="misc">
-                The worlds first <i>private</i> search engine for dogs.
+                The worlds first search engine for dogs.
             </div>
         </div>
     )
