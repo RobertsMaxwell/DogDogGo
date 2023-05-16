@@ -33,7 +33,7 @@ export default function Serp () {
         }
 
         setSearchQuery(query)
-        fetch(`https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyD-zkZnphdRIQDptJ-0uIkfuwH7TmBrtRs&cx=f5ac147254d7346db&q=${query}`)
+        fetch(`https://customsearch.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_API_KEY}&cx=f5ac147254d7346db&q=${query}`)
         .then(res => res.json())
         .then(data => {
             setResults(data.items.map(ele => {return {title: ele.title, url: ele.link, desc: ele.snippet}}))

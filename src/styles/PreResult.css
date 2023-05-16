@@ -15,15 +15,18 @@
 
 .preresult .title {
     width: 600px;
+    max-width: 90%;
     height: 30px;
 }
 
 .preresult .url {
     width: 200px;
     height: 15px;
+    max-width: 70%;
 }
 
 .preresult .desc {
     width: 500px;
+    max-width: 90%;
     height: 80px;
 }
