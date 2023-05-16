@@ -56,11 +56,18 @@ export default function Serp () {
                     <div className="search_bar">
                             <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="Search the web..." onKeyDown={e => {
                                 if(e.key === "Enter") {
+                                    if(searchQuery) {
+                                        nav(`/search/${searchQuery}`)
+                                        window.location.reload()
+                                    }
+                                }
+                            }} />
+                            <img src={Search} alt="Search" className="search_icon" onClick={() => {
+                                if(searchQuery) {
                                     nav(`/search/${searchQuery}`)
                                     window.location.reload()
                                 }
                             }} />
-                            <img src={Search} alt="Search" />
                     </div>
                 </div>
                 <div className="language">

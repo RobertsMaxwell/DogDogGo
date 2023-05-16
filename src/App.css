@@ -21,6 +21,10 @@
   min-height: 100vh;
 }
 
+.search_icon:hover {
+  cursor: pointer;
+}
+
 body {
   background-color: rgb(250, 250, 250);
 }

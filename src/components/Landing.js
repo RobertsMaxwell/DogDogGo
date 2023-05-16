@@ -23,7 +23,11 @@ export default function Landing () {
                         }
                     }
                 }} />
-                <img src={search} alt="Search" />
+                <img src={search} alt="Search" className="search_icon" onClick={() => {
+                    if(query) {
+                        nav(`/search/${query}`)
+                    }
+                }}/>
             </div>
             <div className="misc">
                 The worlds first <i>private</i> search engine for dogs.
