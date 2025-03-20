@@ -94,7 +94,7 @@ export default function Serp () {
                         <button disabled={loadingNext || nextPage > 40} onClick={() => {
                             if(!loadingNext && nextPage) {
                                 setLoadingNext(true)
-                                fetch(`https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyD-zkZnphdRIQDptJ-0uIkfuwH7TmBrtRs&cx=f5ac147254d7346db&q=${query}&start=${nextPage}`)
+                                fetch(`https://customsearch.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_API_KEY}&cx=f5ac147254d7346db&q=${query}&start=${nextPage}`)
                                 .then(res => res.json())
                                 .then(data => {
                                     console.log(data)
