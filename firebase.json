@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "dogdog",
     "public": "public",
     "ignore": [
       "firebase.json",
