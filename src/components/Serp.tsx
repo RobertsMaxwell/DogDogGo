@@ -1,19 +1,19 @@
 import "../styles/Serp.css"
 import Search from "../images/search.png"
-import Result from "../components/Result"
-import PreResult from "../components/PreResult"
+import Result from "./Result"
+import PreResult from "./PreResult"
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import dropdown from "../images/dropdown.png"
 
 export default function Serp () {
-    const [results, setResults] = useState(null)
-    const [stats, setStats] = useState(null)
-    const [nextPage, setNextPage] = useState(null)
-    const [searchQuery, setSearchQuery] = useState("")
-    const [loadingNext, setLoadingNext] = useState(false)
-    const [language, setLanguage] = useState("Dog")
-    const [langDropdown, setLangDropdown] = useState(false)
+    const [results, setResults] = useState<any>(null)
+    const [stats, setStats] = useState<any>(null)
+    const [nextPage, setNextPage] = useState<any>(null)
+    const [searchQuery, setSearchQuery] = useState<any>("")
+    const [loadingNext, setLoadingNext] = useState<any>(false)
+    const [language, setLanguage] = useState<any>("Dog")
+    const [langDropdown, setLangDropdown] = useState<any>(false)
 
     const { query } = useParams()
     const nav = useNavigate()
@@ -97,8 +97,13 @@ export default function Serp () {
                                 fetch(`https://customsearch.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_API_KEY}&cx=f5ac147254d7346db&q=${query}&start=${nextPage}`)
                                 .then(res => res.json())
                                 .then(data => {
-                                    console.log(data)
-                                    setResults(results.concat(data.items.map(ele => {return {title: ele.title, url: ele.link, desc: ele.snippet}})))
+                                    setResults(
+                                        results.concat(
+                                            data.items.map((ele: any) => ({
+                                                title: ele.title, url: ele.link, desc: ele.snippet
+                                            }))
+                                        )
+                                    )
                                     setNextPage(data.queries.nextPage[0].startIndex)
                                     setLoadingNext(false)
                                 })
@@ -125,7 +130,7 @@ export default function Serp () {
     );
 }
 
-const convertToDog = function (str) {
+const convertToDog = function (str: string) {
     const woof = ["a", "b" , "c", "p", "q", "u", "v", "w", "t", "h", "i"]
     const bark = ["d", "e", "f", "g", "r", "s", "x", "y", "z"]
     const ruff = ["j", "k", "l",]
@@ -134,14 +139,17 @@ const convertToDog = function (str) {
     let res = ""
 
     for(let i = 0; i < Math.ceil(str.length / 4); i++) {
-        if(woof.includes(str[i].toLowerCase())) {
-            res += "Woof" + (str[i] === str[i].toLowerCase() ? " " : "! ")
-        } else if (bark.includes(str[i].toLowerCase())) {
-            res += "Bark" + (str[i] === str[i].toLowerCase() ? " " : "! ")
-        } else if (ruff.includes(str[i].toLowerCase())) {
-            res += "Ruff" + (str[i] === str[i].toLowerCase() ? " " : "! ")
-        } else if (growl.includes(str[i].toLowerCase())) {
-            res += "Growl" + (str[i] === str[i].toLowerCase() ? " " : "! ")
+        const char = str[i]
+        if (!char) continue
+
+        if(woof.includes(char.toLowerCase())) {
+            res += "Woof" + (char === char.toLowerCase() ? " " : "! ")
+        } else if (bark.includes(char.toLowerCase())) {
+            res += "Bark" + (char === char.toLowerCase() ? " " : "! ")
+        } else if (ruff.includes(char.toLowerCase())) {
+            res += "Ruff" + (char === char.toLowerCase() ? " " : "! ")
+        } else if (growl.includes(char.toLowerCase())) {
+            res += "Growl" + (char === char.toLowerCase() ? " " : "! ")
         }
     }
 
